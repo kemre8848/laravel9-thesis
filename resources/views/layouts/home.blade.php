@@ -9,7 +9,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <!-- Site Metas -->
-<title>SmartEDU - Education Responsive HTML5 Template</title>
+<title>@yield("title")</title>
 <meta name="keywords" content="">
 <meta name="description" content="">
 <meta name="author" content="">
@@ -36,16 +36,17 @@
 <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
 <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 <![endif]-->
-
+@yield("head")
 </head>
 <body class="host_version">
 @include('home.header')
-@section('slider')
-@show
+
+
 @section('content')
-    @show
+@show
 
 
 @include('home.footer')
+@yield('foot')
 </body>
 </html>
