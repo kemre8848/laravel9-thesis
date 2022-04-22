@@ -7,13 +7,10 @@
     <!-- Content -->
 
 
-    <div class="content-wrapper">
+    <!--<div class="content-wrapper">
         <section class="content-header">
             <div class="container-fluid">
                 <div class="row mb-2">
-                    <div class="col-sm-1">
-                        <h1>Add Category</h1>
-                    </div>
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
                             <li class="breadcrumb-item" href="/admin">Home</li>
@@ -22,61 +19,64 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section> -->
 
-        <section class="content">
-            <div class="card card-primary">
+
+            <div class="col-12 grid margin stretched-card">
                 <div class="card-header">
-                    <h3 class="card-title">Category Elements</h3>
-                </div>
-                <form role="form" action="/admin/category/store" method="POST">
+                   <h3 class="card-title">Form Elements</h3>
+                    <div class="page-header" >
+                        <nav aria-label="breadcrumb">
+                            <o1 class="breadcrumb" style="justify-content:right">
+                                <li class="breadcrumb-item" ><a href="/admin">Forms</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">Form Elements</li>
+                            </o1>
+                        </nav>
+                    </div>
+                <form role="form" action="/admin/category/store" method="post">
                     @csrf
-                    <div class="card-body">
-                        <div class="form-group">
-                            <label for="example">Title</label>
-                            <input type="text" class="form-control" name="title" placeholder="title">
-                        </div>
-                        <div class="form-group">
-                            <label for="example">Keywords</label>
-                            <input type="text" class="form-control" name="keywords" placeholder="keywords">
-                        </div>
-                        <div class="form-group">
-                            <label for="example">Description</label>
-                            <input type="text" class="form-control" name="description" placeholder="description">
-                        </div>
-
-
-                        <div class="form-group">
-                            <label for="exampleInputFile">Image</label>
-                            <div class="input-group">
-                                <div class="custom-file">
-                                    <input type="file" class="custom-file-input" name="image">
-                                    <label class="custom-file-label" for="exampleInputFile">Choose file</label>
-                                </div>
-                                <div class="input-group-append">
-                                    <span class="input-group-text" id="">Upload</span>
-                                </div>
+                    <div class="col-xl">
+                        <div class="card mb-4">
+                            <div class="card-header d-flex justify-content-between align-items-center">
+                                <h5 class="mb-0">Add Category</h5>
+                            </div>
+                            <div class="card-body">
+                                <form>
+                                    <div class="mb-3">
+                                        <label class="form-label" for="basic-default-fullname">Title</label>
+                                        <input type="text" name="title" class="form-control" id="basic-default-fullname" placeholder="Title">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label" for="basic-default-company">Keywords</label>
+                                        <input type="text" name="keywords" class="form-control" id="basic-default-company" placeholder="Keywords">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label" for="basic-default-email">Description</label>
+                                        <div class="input-group input-group-merge">
+                                            <input type="text" name="description" id="basic-default-email" class="form-control" placeholder="Description">
+                                        </div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="formFile" class="form-label">Image</label>
+                                        <input class="form-control" type="file" id="formFile">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="defaultSelect" class="form-label">Status</label>
+                                        <select id="defaultSelect" name="status" class="form-select">
+                                            <option value="1">True</option>
+                                            <option value="2">False</option>
+                                        </select>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary">Send</button>
+                                    <button class="btn btn-dark">Cancel</button>
+                                </form>
                             </div>
                         </div>
-                        <div class="form-group">
-                            <label>Status</label>
-                            <select class="form-control" name="status">
-                                <option>True</option>
-                                <option>False</option>
-                            </select>
-                        </div>
-
-                    </div>
-
-                    <div class="card-footer">
-                        <button type="submit" class="btn btn-primary">Save</button>
                     </div>
                 </form>
-
+                </div>
             </div>
+
         </section>
-
-
-    </div>
     <!-- / Content -->
 @endsection
