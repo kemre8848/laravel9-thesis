@@ -59,10 +59,13 @@ class CategoryController extends Controller
      * @param  \App\Models\Photo  $photo
      * @return \Illuminate\Http\Response
      */
-    public function show(Photo $photo)
+    public function show(Category $category,$id)
     {
         //
-
+        $data= Category::find($id);
+        return view('admin.category.show',[
+            'data' => $data
+        ]);
     }
 
     /**
