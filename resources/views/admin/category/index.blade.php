@@ -8,6 +8,8 @@
 
     <!--<div class="container-xxl flex-grow-1 container-p-y">
         <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Admin/</span> Category List</h4>-->
+    <div class="container-xxl flex-grow-1 container-p-y">
+
     <div class="content">
         <div class="col sm-6">
             <ol class="breadcrumb" style="justify-content:right">
@@ -15,8 +17,14 @@
                 <li class="breadcrumb-item active">Category List</li>
             </ol>
             <!-- Basic Layout & Basic with Icons -->
+            <div class="card">
+                <a href="/admin/category/create" class="btn btn-primary"> Add Categoy</a>
+            </div> <br><br>
             <div class="row">
                 <!-- Basic Layout -->
+
+
+
                 <div class="card">
                     <h5 class="card-header">Category List</h5>
                     <div class="table-responsive text-nowrap">
@@ -59,6 +67,7 @@
             </div>
         </div>
     </div>
+
 
     <!-- / Content -->
 @endsection
