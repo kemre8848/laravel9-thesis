@@ -24,12 +24,12 @@
     <div class="container-xxl flex-grow-1 container-p-y">
             <div class="col-12 grid margin stretched-card">
                 <div class="card-header">
-                    <a href="/admin/category/edit/{{$data->id}}" class="btn btn-primary"> Edit</a>
-                    <a href="/admin/category/destroy/{{$data->id}}" class="btn btn-danger"> Delete</a>
+                    <a href="{{route('admin.category.edit',['id'=>$data->id])}}" class="btn btn-primary"> Edit</a>
+                    <a href="{{route('admin.category.destroy',['id'=>$data->id])}}" class="btn btn-danger"> Delete</a>
                     <div class="page-header" >
                         <nav aria-label="breadcrumb">
                             <o1 class="breadcrumb" style="justify-content:right">
-                                <li class="breadcrumb-item" ><a href="/admin">Forms</a></li>
+                                <li class="breadcrumb-item" ><a href="{{route('admin.index')}}">Forms</a></li>
                                 <li class="breadcrumb-item active" aria-current="page">Show Category</li>
                             </o1>
                         </nav>

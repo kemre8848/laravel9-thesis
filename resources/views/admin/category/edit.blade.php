@@ -28,12 +28,12 @@
                     <div class="page-header" >
                         <nav aria-label="breadcrumb">
                             <o1 class="breadcrumb" style="justify-content:right">
-                                <li class="breadcrumb-item" ><a href="/admin">Forms</a></li>
+                                <li class="breadcrumb-item" ><a href="{{route('admin.index')}}">Forms</a></li>
                                 <li class="breadcrumb-item active" aria-current="page">Edit Category</li>
                             </o1>
                         </nav>
                     </div>
-                <form role="form" action="/admin/category/update/{{$data->id}}" method="post">
+                <form role="form" action="{{route('admin.category.update',['id'=>$data->id])}}" method="post">
                     @csrf
                     <div class="col-xl">
                         <div class="card mb-4">

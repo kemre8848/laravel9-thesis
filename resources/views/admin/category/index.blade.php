@@ -13,12 +13,12 @@
     <div class="content">
         <div class="col sm-6">
             <ol class="breadcrumb" style="justify-content:right">
-                <li class="breadcrumb-item"><a href="/admin">Home</a></li>
+                <li class="breadcrumb-item"><a href="{{route('admin.index')}}">Home</a></li>
                 <li class="breadcrumb-item active">Category List</li>
             </ol>
             <!-- Basic Layout & Basic with Icons -->
             <div class="card">
-                <a href="/admin/category/create" class="btn btn-primary"> Add Categoy</a>
+                <a href="{{route('admin.category.create')}}" class="btn btn-primary"> Add Categoy</a>
             </div> <br><br>
             <div class="row">
                 <!-- Basic Layout -->
@@ -51,9 +51,9 @@
                                     <td>{{$rs->description}}</td>
                                     <td>{{$rs->image}}</td>
                                     <td>{{$rs->status}}</td>
-                                    <td><a href="/admin/category/edit/{{$rs->id}}" class="btn btn-sm btn-primary">Edit</a> </td>
-                                    <td><a href="/admin/category/delete/{{$rs->id}}" class="btn btn-sm btn-danger">Delete</a> </td>
-                                    <td><a href="/admin/category/show/{{$rs->id}}" class="btn btn-sm btn-success">Show</a> </td>
+                                    <td><a href="{{route('admin.category.edit',['id'=>$rs->id])}}" class="btn btn-sm btn-primary">Edit</a> </td>
+                                    <td><a href="{{route('admin.category.destroy',['id'=>$rs->id])}}" class="btn btn-sm btn-danger">Delete</a> </td>
+                                    <td><a href="{{route('admin.category.show',['id'=>$rs->id])}}" class="btn btn-sm btn-success">Show</a> </td>
                                 </tr>
 
                             @endforeach

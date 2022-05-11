@@ -28,7 +28,7 @@
                     <div class="page-header" >
                         <nav aria-label="breadcrumb">
                             <o1 class="breadcrumb" style="justify-content:right">
-                                <li class="breadcrumb-item" ><a href="/admin">Forms</a></li>
+                                <li class="breadcrumb-item" ><a href={{route('admin.index')}}">Forms</a></li>
                                 <li class="breadcrumb-item active" aria-current="page">Form Elements</li>
                             </o1>
                         </nav>
