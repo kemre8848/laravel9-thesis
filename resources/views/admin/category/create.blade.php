@@ -33,7 +33,7 @@
                             </o1>
                         </nav>
                     </div>
-                <form role="form" action="/admin/category/store" method="post">
+                <form role="form" action="{{route('admin.category.store')}}" method="post" enctype="multipart/form-data">
                     @csrf
                     <div class="col-xl">
                         <div class="card mb-4">
@@ -57,8 +57,8 @@
                                         </div>
                                     </div>
                                     <div class="mb-3">
-                                        <label for="formFile" class="form-label">Image</label>
-                                        <input class="form-control" type="file" id="formFile">
+                                        <label for="image" class="form-label">Image</label>
+                                        <input class="form-control" type="file" id="image" name="image">
                                     </div>
                                     <div class="mb-3">
                                         <label for="defaultSelect" class="form-label">Status</label>
