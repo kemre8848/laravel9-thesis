@@ -4,27 +4,13 @@ namespace App\Http\Controllers\AdminPanel;
 
 use App\Http\Controllers\Controller;
 use App\Models\Category;
-use App\Models\Photo;
+use App\Models\Project;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
-class CategoryController extends Controller
+class ProjectController extends Controller
 {
-    protected $appends = [
-        'getParentsTree'
-    ];
 
-    public static function  getParentsTree($category, $title)
-    {
-        if ($category->parent_id == 0)
-        {
-            return $title;
-        }
-
-        $parent = Category::find($category->parent_id);
-        $title = $parent->title . '>' . $title;
-        return CategoryController::getParentsTree($parent, $title);
-    }
     /**
      * Display a listing of the resource.
      *
@@ -33,8 +19,8 @@ class CategoryController extends Controller
     public function index()
     {
         //
-        $data= Category::all();
-        return view('admin.category.index',[
+        $data= Project::all();
+        return view('admin.project.index',[
           'data' => $data
         ]);
     }
@@ -48,7 +34,7 @@ class CategoryController extends Controller
     {
         //
         $data= Category::all();
-        return view('admin.category.create',[
+        return view('admin.project.create',[
             'data' => $data
         ]);
 
@@ -63,11 +49,14 @@ class CategoryController extends Controller
     public function store(Request $request)
     {
         //
-        $data = new Category();
-        $data-> parent_id = $request->parent_id;
+        $data = new Project();
+        $data-> category_id = $request->category_id;
+        $data-> user_id =0; //$request->category_id;
         $data-> title = $request->title;
         $data-> keywords = $request->keywords;
         $data-> description = $request->description;
+        $data-> detail = $request->detail;
+        $data-> videlink = $request->videlink;
         $data-> status = $request->status;
         $data-> image = $request -> image;
         if ($request->file('image')){
@@ -75,7 +64,7 @@ class CategoryController extends Controller
 
         }
         $data-> save();
-        return redirect('admin/category');
+        return redirect('admin/project');
     }
 
     /**
@@ -84,11 +73,11 @@ class CategoryController extends Controller
      * @param  \App\Models\Photo  $photo
      * @return \Illuminate\Http\Response
      */
-    public function show(Category $category,$id)
+    public function show(Project $project,$id)
     {
         //
-        $data= Category::find($id);
-        return view('admin.category.show',[
+        $data= Project::find($id);
+        return view('admin.project.show',[
             'data' => $data
         ]);
     }
@@ -96,14 +85,14 @@ class CategoryController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Category $category
+     * @param  \App\Models\Project $project
      * @return \Illuminate\Http\Response
      */
-    public function edit(Category $category,$id)
+    public function edit(Project $project,$id)
     {
-        $data= Category::find($id);
+        $data= Project::find($id);
         $datalist= Category::all();
-        return view('admin.category.edit',[
+        return view('admin.project.edit',[
             'data' => $data,
             'datalist' => $datalist
         ]);
@@ -113,26 +102,30 @@ class CategoryController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Photo  $photo
+     * @param  \App\Models\Project  $photo
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Category $category,$id)
+    public function update(Request $request, Project $project,$id)
     {
         //
-        $data = Category::find($id);
-        $data-> parent_id = $request->parent_id;
+        $data = Project::find($id);
+        $data-> category_id = $request->category_id;
+        $data-> user_id =0; //$request->category_id;
         $data-> title = $request->title;
         $data-> keywords = $request->keywords;
         $data-> description = $request->description;
+        $data-> detail = $request->detail;
+        $data-> videlink = $request->videlink;
         $data-> status = $request->status;
         $data-> image = $request -> image;
         if ($request->file('image')){
             $data->image=$request->file('image')->store('images');
         }
         $data-> save();
-        return redirect('admin/category');
+        return redirect('admin/project');
 
     }
+
 
     /**
      * Remove the specified resource from storage.
@@ -140,14 +133,14 @@ class CategoryController extends Controller
      * @param  \App\Models\Photo  $photo
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Category $category,$id)
+    public function destroy(Project $project,$id)
     {
         //
-        $data= Category::find($id);
+        $data= Project::find($id);
         if ($data->image && Storage::disk('public')->exists($data->image)){
             Storage::delete($data->image);
         }
         $data->delete();
-        return redirect('admin/category');
+        return redirect('admin/project');
     }
 }

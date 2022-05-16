@@ -117,9 +117,9 @@
             </a>
         </li>
         <li class="menu-item">
-            <a href="/admin/product" class="menu-link ">
+            <a href="/admin/project" class="menu-link ">
                 <i class="menu-icon tf-icons bx bx-dock-top"></i>
-                <div data-i18n="Category">Product</div>
+                <div data-i18n="Category">Project</div>
             </a>
         </li><li class="menu-item">
             <a href="/admin/Comment" class="menu-link ">
