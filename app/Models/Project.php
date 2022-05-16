@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Project extends Model
 {
     use HasFactory;
+    # many to one
 
     public function category(){
         return $this->belongsTo(Category::class);
