@@ -65,6 +65,7 @@
     <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
     <script src="/adminassets/assets/js/config.js"></script>
     <link rel="stylesheet" href="assets/vendor/fonts/boxicons.css" />
+    @yield("head")
 </head>
 
 <body>
@@ -78,6 +79,7 @@
 @show
 
 @include('admin.footer')
+        @yield('foot')
 
     </div>
 </div>

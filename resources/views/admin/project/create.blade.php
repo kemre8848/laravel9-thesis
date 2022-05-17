@@ -1,5 +1,8 @@
 @extends('layouts.adminbase')
 @section('title', 'Add Project')
+@section('head')
+    <script src="https://cdn.ckeditor.com/ckeditor5/34.0.0/classic/ckeditor.js"></script>
+@endsection
 
 
 
@@ -76,7 +79,17 @@
                                         </div>
                                         <div class="mb-3">
                                             <label class="form-label" for="basic-default-email">Detail</label>
-                                            <textarea class="input-group input-group-merge" name="detail"></textarea>
+                                            <textarea class="input-group input-group-merge" id="detail" name="detail"></textarea>
+                                            <script>
+                                                ClassicEditor
+                                                    .create( document.querySelector( '#detail' ) )
+                                                    .then( editor => {
+                                                        console.log( editor );
+                                                    } )
+                                                    .catch( error => {
+                                                        console.error( error );
+                                                    } );
+                                            </script>
 
                                         </div>
                                     <div class="mb-3">
