@@ -36,6 +36,7 @@
                                 <th>Title</th>
                                 <th>Videlink</th>
                                 <th>Image</th>
+                                <th>ImageGallery</th>
                                 <th>Status</th>
                                 <th style="width: 40px">Edit</th>
                                 <th style="width: 40px">Delete</th>
@@ -55,6 +56,11 @@
                                             <img src="{{Storage::url($rs->image)}}" style="height: 40px">
                                         @endif
                                     </td>
+                                    <td><a href="{{route('admin.image.index',['pid'=>$rs->id])}}"
+                                        onclick="return !window.open(this.href, '','top=50 left=100 width=1100,height=700')">
+                                        <img src="{{asset("adminassets/assets/img/gallery.png")}}" style="height: 40px">
+                                        </a>
+                                    </td>
                                     <td>{{$rs->status}}</td>
                                     <td><a href="{{route('admin.project.edit',['id'=>$rs->id])}}" class="btn btn-sm btn-primary">Edit</a> </td>
                                     <td><a href="{{route('admin.project.destroy',['id'=>$rs->id])}}" class="btn btn-sm btn-danger">Delete</a> </td>
@@ -70,6 +76,14 @@
                     </div>
                 </div>
             </div>
+            <div class="card-footer clearfix">
+                <ul class="pagination pagination-sm m-0 float-right">
+                    <li class="page-item"><a class="page-link" href="#">#</a></li>
+                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item"><a class="page-link" href="#">4</a></li>
+                </ul>
         </div>
     </div>
 
