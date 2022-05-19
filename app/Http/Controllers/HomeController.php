@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
+use App\Models\Project;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -9,7 +11,12 @@ class HomeController extends Controller
     //
     public function index()
     {
-        return view('home.index');
+        $sliderdata=Category::limit(4)->get();
+        $projectlist1=Project::limit(6)->get();
+        return view('home.index',[
+        'sliderdata'=>$sliderdata,
+            'projectlist1'=>$projectlist1
+            ]);
     }
 
     public function test()
