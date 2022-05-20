@@ -38,16 +38,15 @@ class HomeController extends Controller
         ]);
     }
 
-    public function categoryproject($id)
-    {   echo "Category Projects";
-        exit();
-        $category = Category::all();
-        $images = DB::table('images')->where('project_id',$id)->get();
-        $data = Project::find($id);
-        return view('home.project',[
-            'data'=>$data,
+    public function categoryprojects($id)
+    {
+
+        $category = Category::find($id);
+        $projects = DB::table('projects')->where('category_id',$id)->get();
+
+        return view('home.categoryprojects',[
             'category'=>$category,
-            'images'=>$images
+            'projects'=>$projects
         ]);
     }
 

@@ -97,13 +97,16 @@
                     <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="dropdown-a" data-toggle="dropdown">Category </a>
+                        <div class="dropdown-menu" aria-labelledby="dropdown-a">
                         @foreach($mainCategories as $rs)
 
-                            <div class="dropdown-menu" aria-labelledby="dropdown-a">
-                            <a class="dropdown-item" href="course-grid-2.html">{{$rs->title}}</a>
-                        </div>
+
+                            <a class="dropdown-item" href="{{route('categoryprojects',['id'=>$rs->id, 'slug'=>$rs->title])}}">{{$rs->title}}</a>
+
                             @include('home.categorytree',['children' => $rs->children])
+
                         @endforeach
+                        </div>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="dropdown-a" data-toggle="dropdown">Blog </a>
