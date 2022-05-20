@@ -2,7 +2,7 @@
     <!-- Indicators -->
     <ol class="carousel-indicators">
         @foreach($sliderdata as $rs)
-        <li data-target="#carouselExampleControls" data-slide-to="{{$loop->index}}" @once class="active" @endonce></li>
+        <li data-target="#carouselExampleControls" data-slide-to="{{$loop->index}}" @once class="active" @endonce></li>a
         @endforeach
 
     </ol>
