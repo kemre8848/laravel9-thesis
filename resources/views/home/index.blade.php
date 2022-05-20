@@ -21,10 +21,10 @@
                         </div>
                         <div class="course-br">
                             <div class="course-title">
-                                <h2><a href="#" title="">{{$rs->title}}</a></h2>
+                                <h2><a href="{{route('project',['id'=>$rs->id])}}" >{{$rs->title}}</a></h2>
                             </div>
                             <div class="course-desc">
-                                <p>Lorem ipsum door sit amet, fugiat deicata avise id cum, no quo maiorum intel ogrets geuiat operts elicata libere avisse id cumlegebat, liber regione eu sit.... </p>
+                                <p>{{$rs->description}} </p>
                             </div>
                             <div class="course-rating">
                                 4.5

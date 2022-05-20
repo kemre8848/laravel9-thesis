@@ -2840,12 +2840,18 @@ body.host_version .first-section .effect-1.slide-btn::after{
 	box-shadow: 0 0 0 2px #2d3032;
 }
 
-
+style="background-image: url({{Storage::url($data->image)}});"
 
 /**-------------- inner Page css ---------------**/
+.opakarkaplan{
+    
+}
+
 
 .all-title-box{
-	background: url(images/banner.jpg)no-repeat;
+    background-color: #fff;
+    opacity: 0.8;
+    z-index: -1;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
@@ -2855,7 +2861,7 @@ body.host_version .first-section .effect-1.slide-btn::after{
 }
 
 .all-title-box h1{
-	color: #fff;
+	color: rgb(241, 8, 8);
 	font-weight: 600;
 	text-transform: capitalize;
 	padding-top: 11%;

@@ -81,7 +81,7 @@
                                     </div>
                                     <div class="mb-3">
                                         <label class="form-label" for="basic-default-email">Detail</label>
-                                        <textarea class="input-group input-group-merge" id="detail" name="detail" value="{{$data->detail}}"></textarea>
+                                        <textarea class="input-group input-group-merge" id="detail" name="detail" >{!! $data->detail !!}</textarea>
 
                                     </div>
                                     <div class="mb-3">

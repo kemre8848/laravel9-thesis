@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Category;
 use App\Models\Project;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {
@@ -17,6 +18,18 @@ class HomeController extends Controller
         'sliderdata'=>$sliderdata,
             'projectlist1'=>$projectlist1
             ]);
+    }
+
+    public function project($id)
+    {
+        $category = Category::all();
+        $images = DB::table('images')->where('project_id',$id)->get();
+        $data = Project::find($id);
+        return view('home.project',[
+            'data'=>$data,
+            'category'=>$category,
+            'images'=>$images
+        ]);
     }
 
     public function test()
