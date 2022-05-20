@@ -80,6 +80,9 @@
 <header class="top-navbar">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
+            @php
+                $mainCategories = \App\Http\Controllers\HomeController::maincategorylist()
+            @endphp
             <a class="navbar-brand" href="index.html">
                 <img src="assets/images/logo.png" alt="" />
             </a>
@@ -93,12 +96,14 @@
                     <li class="nav-item active"><a class="nav-link" href="index.html">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="dropdown-a" data-toggle="dropdown">Course </a>
-                        <div class="dropdown-menu" aria-labelledby="dropdown-a">
-                            <a class="dropdown-item" href="course-grid-2.html">Course Grid 2 </a>
-                            <a class="dropdown-item" href="course-grid-3.html">Course Grid 3 </a>
-                            <a class="dropdown-item" href="course-grid-4.html">Course Grid 4 </a>
+                        <a class="nav-link dropdown-toggle" href="#" id="dropdown-a" data-toggle="dropdown">Category </a>
+                        @foreach($mainCategories as $rs)
+
+                            <div class="dropdown-menu" aria-labelledby="dropdown-a">
+                            <a class="dropdown-item" href="course-grid-2.html">{{$rs->title}}</a>
                         </div>
+                            @include('home.categorytree',['children' => $rs->children])
+                        @endforeach
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="dropdown-a" data-toggle="dropdown">Blog </a>
@@ -107,8 +112,6 @@
                             <a class="dropdown-item" href="blog-single.html">Blog single </a>
                         </div>
                     </li>
-                    <li class="nav-item"><a class="nav-link" href="teachers.html">Teachers</a></li>
-                    <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
                     <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">

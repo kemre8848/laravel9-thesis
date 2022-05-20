@@ -36,6 +36,7 @@ Route::get('/param/{id}/{number}',[HomeController::class,'param'])->name('param'
 Route::post('/save',[HomeController::class,'save'])->name('save');
 
 Route::get('/project/{id}',[HomeController::class,'project'])->name('project');
+Route::get('/categoryprojects/{id}/{slug}',[HomeController::class,'categoryprojects'])->name('categoryprojects');
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');

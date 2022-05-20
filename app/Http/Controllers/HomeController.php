@@ -10,6 +10,12 @@ use Illuminate\Support\Facades\DB;
 class HomeController extends Controller
 {
     //
+
+        public static function maincategorylist(){
+
+            return Category::where('parent_id', '=',0)->with('children')->get();
+
+    }
     public function index()
     {
         $sliderdata=Category::limit(4)->get();
@@ -22,6 +28,19 @@ class HomeController extends Controller
 
     public function project($id)
     {
+        $category = Category::all();
+        $images = DB::table('images')->where('project_id',$id)->get();
+        $data = Project::find($id);
+        return view('home.project',[
+            'data'=>$data,
+            'category'=>$category,
+            'images'=>$images
+        ]);
+    }
+
+    public function categoryproject($id)
+    {   echo "Category Projects";
+        exit();
         $category = Category::all();
         $images = DB::table('images')->where('project_id',$id)->get();
         $data = Project::find($id);
