@@ -67,10 +67,10 @@
 <a href="#" id="scroll-to-top" class="dmtop global-radius"><i class="fa fa-angle-up"></i></a>
 
 <!-- ALL JS FILES -->
-<script src="assets/js/all.js"></script>
+<script src="/assets/js/all.js"></script>
 <!-- ALL PLUGINS -->
-<script src="assets/js/custom.js"></script>
-<script src="assets/js/timeline.min.js"></script>
+<script src="/assets/js/custom.js"></script>
+<script src="/assets/js/timeline.min.js"></script>
 <script>
     timeline(document.querySelectorAll('.timeline'), {
         forceVerticalMode: 700,

@@ -56,7 +56,7 @@
                 </li>
             </ul>
             <div class="tab-content">
-                <div class="tab-pane fade" id="navs-top-general" role="tabpanel">
+                <div class="tab-pane fade active show" id="navs-top-general" role="tabpanel">
                     <input type="hidden" name="id" value="{{$data->id}}" class="form-control">
 
                 <div class="mb-3">
@@ -149,7 +149,7 @@
                 <div class="tab-pane fade" id="navs-top-aboutus" role="tabpanel">
                     <div class="mb-3">
                         <label class="form-label" for="basic-default-fullname">About Us</label>
-                        <textarea class="input-group input-group-merge" id="aboutus" name="aboutus">value="{!! $data->aboutus !!}"</textarea>
+                        <textarea class="input-group input-group-merge" id="aboutus" name="aboutus">{!! $data->aboutus !!}</textarea>
                     </div>
                     <button type="submit" class="btn btn-primary">Update</button>
                 </div>
@@ -157,7 +157,7 @@
                 <div class="tab-pane fade" id="navs-top-contactpage" role="tabpanel">
                     <div class="mb-3">
                         <label class="form-label" for="basic-default-fullname">Contact</label>
-                        <textarea class="input-group input-group-merge" id="contact" name="contact">value="{!! $data->contact !!}"</textarea>
+                        <textarea class="input-group input-group-merge" id="contact" name="contact">{!! $data->contact !!}</textarea>
                     </div>
                     <button type="submit" class="btn btn-primary">Update</button>
                 </div>
@@ -165,7 +165,7 @@
                 <div class="tab-pane fade" id="navs-top-references" role="tabpanel">
                     <div class="mb-3">
                         <label class="form-label" for="basic-default-fullname">References</label>
-                        <textarea class="input-group input-group-merge" id="references" name="references"> value="{!! $data->references !!}"</textarea>
+                        <textarea class="input-group input-group-merge" id="references" name="references">{!! $data->references !!}</textarea>
 
                     </div>
                     <button type="submit" class="btn btn-primary">Update</button>
