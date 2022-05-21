@@ -26,7 +26,7 @@ class ImageController extends Controller
 
         return view('admin.image.index',[
             'project' => $project,
-            'images' => $images,
+            'images' => $images
 
         ]);
         //

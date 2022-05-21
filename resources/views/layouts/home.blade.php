@@ -10,13 +10,14 @@
 
 <!-- Site Metas -->
 <title>@yield("title")</title>
-<meta name="keywords" content="">
-<meta name="description" content="">
-<meta name="author" content="">
+<meta name="description" content="@yield("decription")">
+<meta name="keywords" content="@yield("keywords")">
+<meta name="author" content="Emre">
+<link rel="icon" type="image/x-icon" href="@yield("icon")">
+
 
 <!-- Site Icons -->
-<link rel="shortcut icon" href="/assets/images/favicon.ico" type="image/x-icon" />
-<link rel="apple-touch-icon" href="/assets/images/apple-touch-icon.png">
+
 
 <!-- Bootstrap CSS -->
 <link rel="stylesheet" href="/assets/css/bootstrap.min.css">

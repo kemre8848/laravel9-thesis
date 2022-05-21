@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Category;
 use App\Models\Project;
+use App\Models\Setting;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -20,7 +21,10 @@ class HomeController extends Controller
     {
         $sliderdata=Category::limit(4)->get();
         $projectlist1=Project::limit(6)->get();
+        $setting= Setting::first();
+
         return view('home.index',[
+            'setting'=>$setting,
         'sliderdata'=>$sliderdata,
             'projectlist1'=>$projectlist1
             ]);

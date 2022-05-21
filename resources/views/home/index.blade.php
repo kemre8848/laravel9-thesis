@@ -1,5 +1,10 @@
 @extends('layouts.home')
-@section('title', 'Thesis')
+
+
+@section('title', $setting->title)
+@section('decription', $setting->decription)
+@section('keywords', $setting->keywords)
+@section('icon', Storage::url($setting->icon))
 
 
 
