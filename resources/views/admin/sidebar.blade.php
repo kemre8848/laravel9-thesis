@@ -132,7 +132,7 @@
                 <div data-i18n="Category">FAQ</div>
             </a>
         </li><li class="menu-item">
-            <a href="/admin/messages" class="menu-link ">
+            <a href="{{route('admin.message.index')}}" class="menu-link ">
                 <i class="menu-icon tf-icons bx bx-message-alt"></i>
                 <div data-i18n="Category">Messages</div>
             </a>
