@@ -127,7 +127,7 @@
                 <div data-i18n="Category">Comments</div>
             </a>
         </li><li class="menu-item">
-            <a href="/admin/faq" class="menu-link ">
+            <a href="{{route('admin.faq.index')}}" class="menu-link ">
                 <i class="menu-icon tf-icons bx bx-question-mark"></i>
                 <div data-i18n="Category">FAQ</div>
             </a>

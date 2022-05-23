@@ -111,6 +111,7 @@
                     <li class="nav-item"><a class="nav-link" href="{{route('about')}}">About</a></li>
                     <li class="nav-item"><a class="nav-link" href="{{route('contact')}}">Contact</a></li>
                     <li class="nav-item"><a class="nav-link" href="{{route('references')}}">References</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{route('faq')}}">FAQ</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <li><a class="hover-btn-new log orange" href="#" data-toggle="modal" data-target="#login"><span>Book Now</span></a></li>
