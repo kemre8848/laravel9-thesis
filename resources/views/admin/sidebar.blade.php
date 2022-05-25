@@ -122,7 +122,7 @@
                 <div data-i18n="Category">Project</div>
             </a>
         </li><li class="menu-item">
-            <a href="/admin/Comment" class="menu-link ">
+            <a href="/admin/comment" class="menu-link ">
                 <i class="menu-icon tf-icons bx bx-comment"></i>
                 <div data-i18n="Category">Comments</div>
             </a>

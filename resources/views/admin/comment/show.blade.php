@@ -1,5 +1,5 @@
 @extends('layouts.adminwindow')
-@section('title', 'Show Message')
+@section('title', 'Show Comment')
 
 
 
@@ -31,7 +31,7 @@
 
     <div class="card">
         <h5 class="card-header">Detail Message Data</h5>
-        <div class="table-responsive ">
+        <div class="table-responsive">
             <table class="table table-hover">
                 <thead>
                 <tr>
@@ -40,28 +40,28 @@
                 </tr>
 
                 <tr>
+                    <th>Project</th>
+                    <td>{{$data->project->title}}</td>
+                </tr>
+                <tr>
                     <th>Name & Surname</th>
-                    <td>{{$data->name}}</td>
-                </tr>
-                <tr>
-                    <th>Phone Number</th>
-                    <td>{{$data->phone}}</td>
-                </tr>
-                <tr>
-                    <th>Email</th>
-                    <td>{{$data->email}}</td>
+                    <td>{{$data->user->name}}</td>
                 </tr>
                 <tr>
                     <th>Subject</th>
                     <td>{!! $data->subject !!}</td>
                 </tr>
                 <tr>
-                    <th>Message</th>
-                    <td>{{$data->message}}</td>
+                    <th>Review</th>
+                    <td>{{$data->review}}</td>
+                </tr>
+                <tr>
+                    <th>Rate</th>
+                    <td>{{$data->rate}}</td>
                 </tr>
                 <tr>
                     <th>Ip Number</th>
-                    <td>{{$data->ip}}</td>
+                    <td>{{$data->IP}}</td>
                 </tr>
                 <tr>
                     <th>Status</th>
@@ -78,10 +78,15 @@
                 <tr>
                     <th>Admin Note :</th>
                     <td>
-                        <form role="form" action="{{route('admin.message.update',['id'=>$data->id])}}" method="post">
+                        <form role="form" action="{{route('admin.comment.update',['id'=>$data->id])}}" method="post">
                             @csrf
-                        <textarea  cols="70" id="note" name="note">{{$data->note}}</textarea>
-                            <button type="submit" class="btn btn-primary">Update Note</button>
+                        <select name="status">
+                            <option selected>{{$data->status}}</option>
+                           <option>True</option>
+                            <option>False</option>
+                        </select>
+
+                            <button type="submit" class="btn btn-primary">Update Comment</button>
                             </form>
                     </td>
 
