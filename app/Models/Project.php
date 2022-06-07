@@ -14,7 +14,7 @@ class Project extends Model
         return $this->belongsTo(Category::class);
     }
 
-    public function review(){
+    public function comment(){
         return $this->hasMany(Comment::class);
     }
 }

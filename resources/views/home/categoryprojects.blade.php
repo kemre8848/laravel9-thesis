@@ -20,7 +20,7 @@
                     <br>
 
                     <div class="image-blog">
-                        <img src="{{Storage::url($rs->image)}}" alt="" class="img-fluid">
+                        <img src="{{Storage::url($rs->image)}}" style=" object-fit: cover; height: 300px; width: 600px;" alt="" class="img-fluid">
                     </div>
                     <div class="course-br">
                         <div class="course-title">
@@ -29,15 +29,7 @@
                         <div class="course-desc">
                             <p>{{$rs->description}} </p>
                         </div>
-                        <div class="course-rating">
-                            4.5
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star-half"></i>
-                        </div>
-                    </div>
+                </div>
 
                 </div>
 
