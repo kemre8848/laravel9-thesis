@@ -139,7 +139,7 @@
             </a>
         </li>
         <li class="menu-item">
-            <a href="/admin/users" class="menu-link ">
+            <a href="/admin/user" class="menu-link ">
                 <i class="menu-icon tf-icons bx bx-user-circle"></i>
 
                 <div data-i18n="Category">Users</div>
