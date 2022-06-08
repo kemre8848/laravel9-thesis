@@ -67,6 +67,7 @@
     <div class="menu-inner-shadow"></div>
 
     <ul class="menu-inner py-1">
+
         <!-- dashboard -->
         <li class="menu-item active">
             <a href="/admin" class="menu-link">

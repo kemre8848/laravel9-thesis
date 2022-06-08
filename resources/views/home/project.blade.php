@@ -45,8 +45,8 @@
                             <div class="blog-desc">
                                 {!! $data->detail !!}
                             </div>
-                            <div class="blog-title">
-                                <h2><a href="#" title="">{{$data->videlink}}</a></h2>
+                            <div>
+                                <h2><a href="{{$data->videlink}}" title="">{{$data->videlink}}</a></h2>
                             </div>
                             <div class="course-rating">
                                     @php
@@ -80,7 +80,7 @@
                     <div class="widget-categories">
                         <h3 class="widget-title">Categories</h3>
                         <ul>@foreach($category as $rs)
-                                <li><a href="#">{{$rs->title}}</a></li>
+                                <li><a href="{{route('categoryprojects',['id'=>$rs->id, 'slug'=>$rs->title])}}">{{$rs->title}}</a></li>
                             @endforeach
                         </ul>
                     </div>

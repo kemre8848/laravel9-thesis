@@ -16,10 +16,9 @@
                             <div class="col-md-12 col-sm-12 text-right">
                                 <div class="big-tagline">
                                     <h2><strong>{{$rs->title}} </strong> </h2>
-                                    <p class="lead">With Landigoo responsive landing page template, you can promote your all hosting, domain and email services. </p>
-                                    <a href="#" class="hover-btn-new"><span>Contact Us</span></a>
+                                    <p class="lead">{{$rs->description}}</p>
                                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                    <a href="#" class="hover-btn-new"><span>Read More</span></a>
+                                    <a href="{{route('categoryprojects',['id'=>$rs->id, 'slug'=>$rs->title])}}" class="hover-btn-new"><span>Git</span></a>
                                 </div>
                             </div>
                         </div><!-- end row -->
