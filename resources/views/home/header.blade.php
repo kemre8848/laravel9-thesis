@@ -15,59 +15,70 @@
                 <!-- Tab panes -->
                 <div class="tab-content">
                     <div class="tab-pane active" id="Login">
-                        <form role="form" class="form-horizontal">
+                        <form role="form" method="post" action="{{route('login')}}" accept-charset="UTF-8" class="form-horizontal">
+                            @csrf
                             <div class="form-group">
                                 <div class="col-sm-12">
-                                    <input class="form-control" id="email1" placeholder="Name" type="text">
+                                    <x-jet-label for="email" value="{{ __('Email') }}" />
+                                    <x-jet-input class="form-control" id="email" type="email" name="email" :value="old('email')" required autofocus />
                                 </div>
                             </div>
                             <div class="form-group">
                                 <div class="col-sm-12">
-                                    <input class="form-control" id="exampleInputPassword1" placeholder="Email" type="email">
+                                    <x-jet-label for="password" value="{{ __('Password') }}" />
+                                    <x-jet-input class="form-control" id="password" type="password" name="password" required autocomplete="current-password" />
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-sm-10">
-                                    <button type="submit" class="btn btn-light btn-radius btn-brd grd1">
-                                        Submit
-                                    </button>
+                                    <x-jet-button class="btn btn-light btn-radius btn-brd grd1">
+                                        {{ __('Log in') }}
+                                    </x-jet-button>
                                     <a class="for-pwd" href="javascript:;">Forgot your password?</a>
                                 </div>
                             </div>
                         </form>
                     </div>
                     <div class="tab-pane" id="Registration">
-                        <form role="form" class="form-horizontal">
+                        <form method="POST" action="{{ route('register') }}">
+                            @csrf
                             <div class="form-group">
                                 <div class="col-sm-12">
-                                    <input class="form-control" placeholder="Name" type="text">
+                                    <div>
+                                            <x-jet-label for="name" value="{{ __('Name') }}" />
+                                            <x-jet-input id="name" class="form-control" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
                             <div class="form-group">
                                 <div class="col-sm-12">
-                                    <input class="form-control" id="email" placeholder="Email" type="email">
+                                    <x-jet-label for="email" value="{{ __('Email') }}" />
+                                    <x-jet-input id="email" class="form-control" type="email" name="email" :value="old('email')" required />
                                 </div>
-                            </div>
+                                </div>
+
+
                             <div class="form-group">
                                 <div class="col-sm-12">
-                                    <input class="form-control" id="mobile" placeholder="Mobile" type="email">
+                                    <x-jet-label for="password" value="{{ __('Password') }}" />
+                                    <x-jet-input id="password" class="form-control" type="password" name="password" required autocomplete="new-password" />
                                 </div>
                             </div>
+
+
                             <div class="form-group">
                                 <div class="col-sm-12">
-                                    <input class="form-control" id="password" placeholder="Password" type="password">
+                                    <x-jet-label for="password_confirmation" value="{{ __('Confirm Password') }}" />
+                                    <x-jet-input id="password_confirmation" class="form-control" type="password" name="password_confirmation" required autocomplete="new-password" />
                                 </div>
                             </div>
-                            <div class="row">
-                                <div class="col-sm-10">
-                                    <button type="button" class="btn btn-light btn-radius btn-brd grd1">
-                                        Save &amp; Continue
-                                    </button>
-                                    <button type="button" class="btn btn-light btn-radius btn-brd grd1">
-                                        Cancel</button>
+                            <div class="col-sm-10">
+                                <x-jet-button class="ml-4">
+                                    {{ __('Register') }}
+                                </x-jet-button>
                                 </div>
-                            </div>
                         </form>
+                        
                     </div>
                 </div>
             </div>
@@ -98,24 +109,37 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="dropdown-a" data-toggle="dropdown">Category </a>
                         <div class="dropdown-menu" aria-labelledby="dropdown-a">
-                        @foreach($mainCategories as $rs)
+                            @foreach($mainCategories as $rs)
 
 
-                            <a class="dropdown-item" href="{{route('categoryprojects',['id'=>$rs->id, 'slug'=>$rs->title])}}">{{$rs->title}}</a>
+                                <a class="dropdown-item" href="{{route('categoryprojects',['id'=>$rs->id, 'slug'=>$rs->title])}}">{{$rs->title}}</a>
 
-                            @include('home.categorytree',['children' => $rs->children])
+                                @include('home.categorytree',['children' => $rs->children])
 
-                        @endforeach
+                            @endforeach
                         </div>
                     </li>
                     <li class="nav-item"><a class="nav-link" href="{{route('about')}}">About</a></li>
                     <li class="nav-item"><a class="nav-link" href="{{route('contact')}}">Contact</a></li>
                     <li class="nav-item"><a class="nav-link" href="{{route('references')}}">References</a></li>
                     <li class="nav-item"><a class="nav-link" href="{{route('faq')}}">FAQ</a></li>
+                    @auth()
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link" href="/loginuser">{{Auth::user()->name}}</a>
+                            <div class="dropdown-menu" aria-labelledby="dropdown-a">
+                        <a href="/logoutuser" class="text-uppercase">Log Out</a>
+                            </div>
+                        </li>
+
+                    @endauth
+
                 </ul>
+@guest
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a class="hover-btn-new log orange" href="#" data-toggle="modal" data-target="#login"><span>Book Now</span></a></li>
+                    <li><a class="hover-btn-new log orange" href="" data-toggle="modal" data-target="#login"><span>Book Now</span></a></li>
                 </ul>
+                @endguest
             </div>
         </div>
     </nav>
