@@ -128,7 +128,8 @@
                         <li class="nav-item dropdown">
                             <a class="nav-link" href="/loginuser">{{Auth::user()->name}}</a>
                             <div class="dropdown-menu" aria-labelledby="dropdown-a">
-                        <a href="/logoutuser" class="text-uppercase">Log Out</a>
+                                <a href="{{route('userpanel.index')}}" class="text-uppercase">My Account</a>
+                                <a href="/logoutuser" class="text-uppercase">Log Out</a>
                             </div>
                         </li>
 
@@ -137,7 +138,7 @@
                 </ul>
 @guest
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a class="hover-btn-new log orange" href="" data-toggle="modal" data-target="#login"><span>Book Now</span></a></li>
+                    <li><a class="hover-btn-new log orange" href="" data-toggle="modal" data-target="#login"><span>Log In</span></a></li>
                 </ul>
                 @endguest
             </div>
