@@ -34,8 +34,8 @@
                                 <th>Id</th>
                                 <th>Name</th>
                                 <th>Email</th>
-                                <th>Status</th>
                                 <th>Role</th>
+
                                 <th style="width: 40px">Show</th>
                                 <th style="width: 40px">Delete</th>
                             </tr>
