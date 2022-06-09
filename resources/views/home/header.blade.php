@@ -128,8 +128,13 @@
                         <li class="nav-item dropdown">
                             <a class="nav-link" href="/loginuser">{{Auth::user()->name}}</a>
                             <div class="dropdown-menu" aria-labelledby="dropdown-a">
-                                <a href="{{route('userpanel.index')}}" class="text-uppercase">My Account</a>
-                                <a href="/logoutuser" class="text-uppercase">Log Out</a>
+
+                        <a class="dropdown-item" href="{{route('userpanel.index')}}"><i class="fa fa user-0"></i> My Profile</a>
+                        <a class="dropdown-item" href="#"><i class="fa fa-heart-o"></i> My Orders</a>
+                        <a class="dropdown-item" href="{{route('userpanel.reviews')}}"><i class="fa fa-exchange"></i> My Reveiws</a>
+                        <a class="dropdown-item" href="#"><i class="fa fa-check"></i> Checkout</a>
+                        <a class="dropdown-item" href="#"><i class="fa fa-unlock"></i> My Project</a>
+                        <a class="dropdown-item" href="/logout"><i class="fa bx-user-plus"></i> Logout</a>
                             </div>
                         </li>
 
